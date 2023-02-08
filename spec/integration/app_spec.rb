@@ -31,5 +31,12 @@ RSpec.describe Application do
             expect(response.body).to eq('Amber,Anna,Beth,Steve')
         end
     end
+
+    context "GET /hello" do 
+      it "returns html hello view" do
+        response = get('/hello')
+        expect(response.body).to include('<h1>Hello</h1>')
+      end
+    end
 end
 
